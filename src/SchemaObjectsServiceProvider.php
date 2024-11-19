@@ -7,15 +7,15 @@ namespace GrabauDev\SchemaObjects;
 use GrabauDev\SchemaObjects\Commands\GenerateCommand;
 use Illuminate\Support\ServiceProvider;
 
-class SchemaObjectsServiceProvider extends ServiceProvider {
-    public function register(): void {
+class SchemaObjectsServiceProvider extends ServiceProvider
+{
+    public function register(): void {}
 
-    }
-
-    public function boot(): void {
+    public function boot(): void
+    {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                GenerateCommand::class
+                GenerateCommand::class,
             ]);
         }
     }
