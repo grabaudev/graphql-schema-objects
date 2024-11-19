@@ -3,7 +3,23 @@ name: CI
 on: [push]
 
 jobs:
-  build-test:
+  pint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Install dependencies"
+        uses: php-actions/composer@v6
+
+      - name: "pint"
+        uses: aglipanci/laravel-pint-action@latest
+        with:
+          testMode: true
+          configPath: "./pint.json"
+
+  phpstan:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,9 +33,3 @@ jobs:
         uses: php-actions/phpstan@v3
         with:
           path: src/
-
-      - name: "pint"
-        uses: aglipanci/laravel-pint-action@latest
-        with:
-          testMode: true
-          configPath: "./pint.json"
