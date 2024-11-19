@@ -1,0 +1,30 @@
+{
+    "name": "grabaudev/graphql-schema-objects",
+    "description": "Generate DTOs from your GraphQL schema with ease!",
+    "version": "1.0.0",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GrabauDev\\SchemaObjects\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maximilian Grabau",
+            "email": "max@grabau.dev"
+        }
+    ],
+    "require": {
+        "php": "^8",
+        "nette/php-generator": "^4.1",
+        "illuminate/console": "^11.33",
+        "illuminate/support": "^11.33"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GrabauDev\\SchemaObjects\\SchemaObjectsServiceProvider"
+            ]
+        }
+    }
+}
